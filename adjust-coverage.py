@@ -10,6 +10,8 @@
 #args: filename filename-out
 
 # Parses the HTML of lcov output and adds SonarQube-style Overall code coverage metric
+# Note: This assumes lcov was executed with "--rc lcov_branch_coverage=1" and genhtml
+# was executed with "--legend".
 
 # Example html content
 #<tr>
