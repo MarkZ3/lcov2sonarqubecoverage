@@ -70,9 +70,10 @@ if LC * EL * C * B < 0:
     print "Could not compute coverage, negative values obtained."
     sys.exit(1)
 
-print "Coverage = (CT + CF + LC)/(2*B + EL)"
-print "Coverage = (%s + %s)/(2*%s + %s)" % (C, LC, B, EL)
-COVERAGE = (C + LC)/(2*B + EL)
+print "Coverage = (CT + CF + LC)/(1*B + EL)"
+print "### Sonarqube's documentation says 2*B but for C++ in reality it seems to be 1*B, as of Sonarqube 5.6 ###"
+print "Coverage = (%s + %s)/(1*%s + %s)" % (C, LC, B, EL)
+COVERAGE = (C + LC)/(1*B + EL)
 FORMATTED_COVERAGE = ("{0:.1f}".format(COVERAGE*100))
 print "Result: %s" % FORMATTED_COVERAGE
 
